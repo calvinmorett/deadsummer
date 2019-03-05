@@ -1,0 +1,343 @@
+*, :after, :before, html, body{ box-sizing: inherit; margin:0; padding:0; }
+html{
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+body {
+    background: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    max-width: 1000px;
+    color: #fff;
+}
+a, a:link, a:active, a:visited{
+  text-decoration:none;
+  color:white;}
+a:hover{color:#74deff;}
+.events {
+    margin: 0;
+    padding: 30px 0 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, auto);
+    justify-content: center;
+    text-align: center;
+}
+.events:hover .event_label{
+  color:#fff;
+}
+#date, #time, #venue{
+  font-size:11px;
+  letter-spacing:.015rem;
+  color:#fff;
+  padding:4px 0 8px;
+  margin:0;
+  background:#000;
+  box-shadow:2px 0 2px rgba(0,0,0,.5);
+}
+#date:before{
+  content:'Dead Summer`s Upcoming Shows & Events';
+  vertical-align:middle;
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  color:#fff;
+  padding:10px 0 10px;
+  font-weight:bold;
+  width:100%;
+  overflow:hidden;
+  background: #000;
+  box-shadow:2px 0 2px rgba(0,0,0,.5);
+}
+.column{  text-align:left; padding:2px 22px 2px;  margin:4px 0 0;  color:#fff; }
+
+.column:nth-child(odd){ color:lime; transition:all .2s ease; background:rgba(255,255,255,.2); color:#eee; }
+
+.event_label{
+  font-weight:bold;
+  box-shadow:0 2px;
+  padding:8px 0 4px;
+  margin:0 0 12px;
+  text-align:center;
+}
+.events-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:block;
+  z-index:999;
+}
+.container{
+  padding:0;
+  grid-gap: 0;
+  grid-auto-flow: column;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+.content {
+    height: calc(100vh);
+    width: 100vw;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    box-shadow: 0px 1px 20px rgba(119, 119, 119, 0.0784313725490196);
+    grid-gap: 0;
+    grid-auto-flow: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 0;
+    margin:0;
+    background:transparent;
+  background:transparent url('https://imgeasy.com/images/fChc.jpg') no-repeat;
+  background-size:cover;
+  background-position:0 55%;
+}
+.content_left,
+.content_right{
+	background:rgba(0,0,0,.75);
+  transition:background .23s ease;
+}
+.content_right:hover{
+  background:rgba(255,200,50,.8);
+}
+.content_left:hover{
+		background:rgba(25,255,100,.8);
+}
+.content_right:hover h1{
+  color:rgba(255,200,50,.8);
+}
+.content_left:hover h1{
+  color:rgba(25,255,100,.8);
+}
+.content p{
+  opacity:0;
+  height:0;
+}
+.content_right:hover p{
+  opacity:1;
+  height:auto;
+  color:rgba(255,200,50,.8);
+}
+.content_left:hover p{
+  opacity:1;
+  height:auto;
+  color:rgba(25,255,100,.8);
+}
+.content_left,
+.content_right{
+	  overflow:hidden;
+	  padding:30px 23px;
+}
+.content_left h1, .content_right h1 {
+    color: white;
+    background:#000;
+    font-weight: bold;
+    padding: 4px 8px;
+    margin:0;
+    font-size: 63px;
+	  display:inline;
+    box-shadow:2px 0 2px rgba(0,0,0,.5);
+}
+.content_left p, .content_right p {
+    color: white;
+	  font-family:sans-serif;
+    background:#000;
+    font-weight: normal;
+    letter-spacing:.0223rem;
+    padding: 12px;
+    margin:0;
+    font-size: 12px;
+	  display:block;
+	  line-height:1.2;
+    max-width:50%;
+  box-shadow:2px 0 2px rgba(0,0,0,.5);
+}
+.content_left, .content_right{
+  position:relative;
+}
+.event_label{
+  font-weight:bold;
+  box-shadow:0 2px;
+  padding:8px 0 4px;
+  margin:0 0 12px;
+  font-size:22px;
+  text-align:center;
+}
+.content_inner{
+  width:calc(100% - 5vw);
+  position:absolute;
+  left:30px;
+  bottom:1em;
+  overflow:hidden;
+  padding-bottom:2em;
+}
+.footer{
+  display:block;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:20px;
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:0;
+}
+.footer a{
+  color:#fff;
+  padding:0 ;
+  margin:0 4px 0 0;
+  display:inline-block;
+  vertical-align:middle;
+  text-indent:0;
+  box-shadow:0 2px yellow;
+}
+.footer a:hover{
+  color:yellow;
+}
+@media (max-width: 1100px) {
+  .content_inner p,
+  .content p{
+    height:0;
+    opacity:0;
+    margin:0;
+    padding:0;
+    display:none;
+  }
+  .content_inner p:hover,
+  .content p:hover{
+    opacity:0;
+    height:0;
+    margin:0;
+    padding:0;
+    display:none;
+  }
+}
+@media (max-width: 600px) {
+  .content_left,.content_right{
+    height:100%;
+    width:100%;
+    padding:0;
+    display:block;
+  }
+  .content_inner h1{
+    font-size:22px;
+  }
+	.events-container{
+    height:100vh;
+    width:100vw;
+    padding:0;
+	}
+  .events{
+    height:100vh;
+    background:#000;
+    display:block;
+  }
+  .column:nth-child(2){  
+    background:red;
+    font-size:1.25em;
+    font-weight:bold;
+    color:yellow;
+  font-size:22px;
+  }
+  .column:nth-child(3){
+    background:orange;
+    font-size:1.25em;
+    font-weight:bold;
+    color:black;
+  font-size:20px;
+  }
+  .column:nth-child(4){
+    background:yellow;
+    font-size:1.25em;
+    font-weight:bold;
+    color:black;
+  font-size:18px;
+  }
+  .column:nth-child(5){
+    background:red;
+    font-size:1.25em;
+    font-weight:bold;
+    color:black;
+  }
+  .column:nth-child(6){
+    background:orange;
+    font-size:1.25em;
+    font-weight:bold;
+    color:black;
+  }
+  .column:nth-child(7){
+    background:yellow;
+    font-size:1.25em;
+    font-weight:bold;
+    color:black;
+  }
+  .column:hover{
+  font-size:22px;
+  }
+	.content{
+ 	  grid-template-rows:50% 50%;
+	  grid-template-columns: 100% 100%;
+	}
+	.media_says_hide{
+		opacity:0;
+		visibility:hidden;
+	}
+  .content_inner{
+    width:100%;
+    padding:0;
+    margin:0;
+    display:block;  
+  }
+  .footer a{
+    margin:5px 0;
+    padding:5px;
+    background:yellow;
+    color:black;
+  }
+  .footer a:hover{
+    color:blue;
+  }
+.content_right{
+  background:rgba(255,200,50,.8);
+}
+.content_left{
+		background:rgba(25,255,100,.8);
+}
+  .content_inner{
+  padding:10px;
+  margin:0;
+  top:0;
+  left:0;
+  }
+  iframe, .footer{
+  max-width:calc(100vw - 20px);
+  }
+  .footer{
+    line-height:10px;
+    padding:10px;
+    max-width:calc(100% - 60px);
+    margin:20px 10px 0;
+    display:block;
+    color:black;
+  }
+  .content_inner p,
+  .content p{
+    height:0;
+    opacity:0;
+    margin:0;
+    padding:0;
+    display:none;
+  }
+  .content_inner p:hover,
+  .content p:hover{
+    opacity:0;
+    height:0;
+    margin:0;
+    padding:0;
+    display:none;
+  }
+}
